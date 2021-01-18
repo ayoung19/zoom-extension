@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
-    "name": "Zoom Playback Tools",
-    "description": "Zoom Playback Tools",
+    "name": "Zoom Recording Playback Tools",
+    "description": "Improve your Zoom recording playback experience",
     "version": "1",
     "content_scripts": [
         {
