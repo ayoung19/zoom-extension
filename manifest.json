@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "Zoom Recording Playback Tools",
+    "description": "Zoom Recording Playback Tools",
+    "version": "1",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
+}
