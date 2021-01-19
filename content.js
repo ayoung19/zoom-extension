@@ -5,6 +5,7 @@ let normal = {
 };
 // list of playback speeds
 let speeds = [0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0];
+// video element
 let video = document.querySelector("video");
 // zoom playback speed menu ul element
 let menu = document.querySelector("#vjs-pop-menu-3");
