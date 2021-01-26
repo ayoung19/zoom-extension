@@ -36,24 +36,9 @@ observer.observe(document.body, {
 function init() {
     // create a keydown listener on entire document
     document.addEventListener("keydown", function (e) {
-        if (e.code == "Space" || e.code == "KeyK") {
-            // if the key is spacebar or k, press the play button
-            document.querySelector(".vjs-play-control").click();
-        } else if (e.code == "KeyF" && !e.ctrlKey && !e.altKey) {
-            // if key is f, press the fullscreen button
-            document.querySelector(".vjs-fullscreen-toggle-control-button").click();
-        } else if (e.code == "KeyM") {
-            // if key is f, press the mute button
-            document.querySelector(".vjs-mute-control").click();
-        } else if(e.code == "KeyJ") {
-            // else, j/l for -/+ 10s and left/right for -/+ 5s
-            video.currentTime -= 10;
-        } else if(e.code == "KeyL") {
-            video.currentTime += 10;
-        } else if (e.code == "ArrowLeft") {
-            video.currentTime -= 5;
-        } else if (e.code == "ArrowRight") {
-            video.currentTime += 5;
+        // if ctrl and alt aren't pressed, trigger hotkeys
+        if (!e.ctrlKey && !e.altKey) {
+            triggerHotkey(e.code);
         }
     });
 
@@ -73,6 +58,38 @@ function init() {
     menu.replaceChildren(...options);
     // change the speed to the normal speed
     changeSpeed(normal.speed, normal.option);
+}
+
+// trigger hotkey based on incoming keycode
+function triggerHotkey(code) {
+    switch (code) {
+        // if the key is spacebar or k, press the play button
+        case "Space":
+        case "KeyK":
+            document.querySelector(".vjs-play-control").click();
+            break;
+        // if key is f, press the fullscreen button
+        case "KeyF":
+            document.querySelector(".vjs-fullscreen-toggle-control-button").click();
+            break;
+        // if key is f, press the mute button
+        case "KeyM":
+            document.querySelector(".vjs-mute-control").click();
+            break;
+        // else, j/l for -/+ 10s and left/right for -/+ 5s
+        case "KeyJ":
+            video.currentTime -= 10;
+            break;
+        case "KeyL":
+            video.currentTime += 10;
+            break;
+        case "ArrowLeft":
+            video.currentTime -= 5;
+            break;
+        case "ArrowRight":
+            video.currentTime += 5;
+            break;
+    }
 }
 
 // create an option element given a speed
