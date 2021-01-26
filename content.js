@@ -39,7 +39,7 @@ function init() {
         if (e.code == "Space" || e.code == "KeyK") {
             // if the key is spacebar or k, press the play button
             document.querySelector(".vjs-play-control").click();
-        } else if (e.code == "KeyF") {
+        } else if (e.code == "KeyF" && !e.ctrlKey && !e.altKey) {
             // if key is f, press the fullscreen button
             document.querySelector(".vjs-fullscreen-toggle-control-button").click();
         } else if (e.code == "KeyM") {
