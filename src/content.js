@@ -8,14 +8,14 @@ let speeds = [0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0];
 // video element
 let video = document.querySelector("video");
 // zoom playback speed menu ul element
-let menu = document.querySelector("#vjs-pop-menu-3");
+let menu = document.querySelector("#vjs-pop-menu-4");
 // array to store the created option elements that will be injected to the menu later
 let options = [];
 
 // mutation observer that checks if zoom playback speed menu ul element is loaded
 let observer = new MutationObserver(function(mutations) {
     // once it is
-    if ((menu = document.querySelector("#vjs-pop-menu-3")) && (video = document.querySelector("video"))) {
+    if ((menu = document.querySelector("#vjs-pop-menu-4")) && (video = document.querySelector("video"))) {
         // start the main script
         init();
         // stop the observer
@@ -64,7 +64,6 @@ function init() {
 function triggerHotkey(code) {
     switch (code) {
         // if the key is spacebar or k, press the play button
-        case "Space":
         case "KeyK":
             document.querySelector(".vjs-play-control").click();
             break;
@@ -82,12 +81,6 @@ function triggerHotkey(code) {
             break;
         case "KeyL":
             video.currentTime += 10;
-            break;
-        case "ArrowLeft":
-            video.currentTime -= 5;
-            break;
-        case "ArrowRight":
-            video.currentTime += 5;
             break;
     }
 }
