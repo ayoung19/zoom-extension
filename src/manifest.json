@@ -1,8 +1,8 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Recording Playback Tool for Zoom",
     "description": "Enhance your Zoom recording playback experience.",
-    "version": "1.4",
+    "version": "1.5",
     "content_scripts": [
         {
             "matches": ["*://*.zoom.us/rec/play/*"],
